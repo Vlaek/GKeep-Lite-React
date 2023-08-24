@@ -1,0 +1,43 @@
+.wrapper {
+    position: relative;
+    width: 500px;
+
+    .input {
+        width: 500px;
+        padding: 10px;
+        padding-left: 35px;
+        background-color: #525355;
+        color: #fff;
+        border: none;
+        border-radius: 15px;
+        outline: none;
+        font-size: 20px;
+
+        &:focus {
+            + .input__btn_clear {
+                display: inline-block;
+            }
+        }
+
+        &__btn_search {
+            position: absolute;
+            left: 7px;
+            top: 12px;
+            font-size: 20px;
+        }
+
+        &__btn_clear {
+            display: none;
+            position: absolute;
+            top: 12px;
+            right: 7px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+            cursor: pointer;
+
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}
