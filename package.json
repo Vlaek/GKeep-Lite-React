@@ -1,9 +1,12 @@
 {
     "name": "keeps-react",
     "private": true,
+    "homepage": "https://vlaek.github.io/GKeep-Lite-React/",
     "version": "0.0.0",
     "type": "module",
     "scripts": {
+        "predeploy": "yarn run build",
+        "deploy": "gh-pages -d dist",
         "dev": "vite",
         "build": "tsc && vite build",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
