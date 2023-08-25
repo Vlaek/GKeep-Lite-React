@@ -74,7 +74,13 @@ const Keep: FC<KeepProps> = ({
             <div className="keep__title">{keep.title}</div>
             <div className="keep__text">{keep.text}</div>
             <div className="keep__footer"></div>
-            <IoClose className="keep__btn-close" onClick={() => onDelete(keep.id)} />
+            <IoClose
+                className="keep__btn-close"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    onDelete(keep.id);
+                }}
+            />
         </div>
     );
 };
