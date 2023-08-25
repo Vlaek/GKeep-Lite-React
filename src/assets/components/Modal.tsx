@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect, useRef } from "react";
 import { IoClose } from "react-icons/io5";
 import { IAddKeep, IEditKeep, ISetModal, IKeep } from "../types/types";
 
@@ -10,8 +10,12 @@ interface ModalProps {
     addKeep: IAddKeep;
 }
 
+interface FormRefType {
+    reset: () => void;
+}
+
 const Modal: FC<ModalProps> = ({ showModal, setShowModal, keep, editKeep, addKeep }) => {
-    const [newKeep, setNewKeeep] = useState({
+    const [newKeep, setNewKeep] = useState({
         id: keep ? keep.id : -1,
         title: keep ? keep.title : "",
         text: keep ? keep.text : "",
@@ -19,8 +23,11 @@ const Modal: FC<ModalProps> = ({ showModal, setShowModal, keep, editKeep, addKee
     });
 
     useEffect(() => {
-        if (keep) setNewKeeep(keep);
+        if (keep) setNewKeep(keep);
+        if (formRef.current !== null) formRef.current.reset();
     }, [keep]);
+
+    const formRef = useRef<FormRefType | null>(null);
 
     const saveKeep = () => {
         if (!keep) {
@@ -46,7 +53,7 @@ const Modal: FC<ModalProps> = ({ showModal, setShowModal, keep, editKeep, addKee
                 style={{ backgroundColor: newKeep.color }}
                 onClick={(e) => e.stopPropagation()}
             >
-                <form className="modal__form">
+                <form className="modal__form" ref={(node) => (formRef.current = node)}>
                     <div className="modal__header">
                         <input
                             className="modal__input"
