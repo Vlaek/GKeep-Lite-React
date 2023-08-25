@@ -1,27 +1,27 @@
 import { FC } from "react";
-import { IDeleteKeep, IEditKeep, IKeep } from "../types/types";
+import { IDeleteKeep, IKeep, ISetModalActive } from "../types/types";
 import { IoClose } from "react-icons/io5";
 
 interface KeepProps {
     keeps: IKeep[];
     keep: IKeep;
     keepIndex: number;
-    onEdit: IEditKeep;
     onDelete: IDeleteKeep;
     draggableItem: number;
     setDraggableItem: (id: number) => void;
     setKeeps: (keeps: IKeep[]) => void;
+    setModalActive: ISetModalActive;
 }
 
 const Keep: FC<KeepProps> = ({
     keeps,
     keep,
     keepIndex,
-    // onEdit,
     onDelete,
     draggableItem,
     setDraggableItem,
     setKeeps,
+    setModalActive,
 }) => {
     const dragOverHandler = (e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault();
@@ -69,6 +69,7 @@ const Keep: FC<KeepProps> = ({
             onDragLeave={(e) => dragLeaveHandler(e)}
             onDragEnd={(e) => dragEndHandler(e)}
             onDrop={(e) => dropHandler(e, keepIndex)}
+            onClick={() => setModalActive(keep)}
         >
             <div className="keep__title">{keep.title}</div>
             <div className="keep__text">{keep.text}</div>

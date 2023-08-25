@@ -1,16 +1,16 @@
 import Masonry from "react-masonry-css";
 import Keep from "./Keep";
 import { FC, useState } from "react";
-import { IDeleteKeep, IEditKeep, IKeep } from "../types/types";
+import { IDeleteKeep, IKeep, ISetModalActive } from "../types/types";
 
 interface KeepListProps {
     keeps: IKeep[];
-    onEdit: IEditKeep;
     onDelete: IDeleteKeep;
     setKeeps: (keeps: IKeep[]) => void;
+    setModalActive: ISetModalActive;
 }
 
-const KeepList: FC<KeepListProps> = ({ keeps, onEdit, onDelete, setKeeps }) => {
+const KeepList: FC<KeepListProps> = ({ keeps, onDelete, setKeeps, setModalActive }) => {
     const [draggableItem, setDraggableItem] = useState<number>(0);
 
     return (
@@ -21,11 +21,11 @@ const KeepList: FC<KeepListProps> = ({ keeps, onEdit, onDelete, setKeeps }) => {
                     keep={keep}
                     keepIndex={index}
                     key={keep.id}
-                    onEdit={onEdit}
                     onDelete={onDelete}
                     draggableItem={draggableItem}
                     setDraggableItem={setDraggableItem}
                     setKeeps={setKeeps}
+                    setModalActive={setModalActive}
                 />
             ))}
         </Masonry>

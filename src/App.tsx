@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import Header from "./assets/components/Header";
 import KeepList from "./assets/components/KeepList";
-// import Modal from "./assets/components/Modal";
+import Modal from "./assets/components/Modal";
 import { IKeep } from "./assets/types/types";
 
 const defaultKeeps = [
@@ -51,11 +51,12 @@ const defaultKeeps = [
 
 const App: FC = () => {
     const [keeps, setKeeps] = useState<IKeep[]>(defaultKeeps);
-    // const [modal, setModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [fullKeep, setFullKeep] = useState<IKeep | null>(null);
 
-    // const addKeep = (keep: IKeep) => {
-    //     setKeeps([...keeps, keep]);
-    // };
+    const addKeep = (keep: IKeep) => {
+        setKeeps([...keeps, keep]);
+    };
 
     const editKeep = (newKeep: IKeep, id: number) => {
         setKeeps(
@@ -72,10 +73,27 @@ const App: FC = () => {
         setKeeps(keeps.filter((keep) => keep.id !== id));
     };
 
+    const setModalActive = (keep: IKeep | null) => {
+        setFullKeep(keep);
+        setShowModal(!showModal);
+    };
+
     return (
         <>
             <Header />
-            <KeepList keeps={keeps} onEdit={editKeep} onDelete={deleteKeep} setKeeps={setKeeps} />
+            <KeepList
+                keeps={keeps}
+                onDelete={deleteKeep}
+                setKeeps={setKeeps}
+                setModalActive={setModalActive}
+            />
+            <Modal
+                keep={fullKeep}
+                showModal={showModal}
+                editKeep={editKeep}
+                addKeep={addKeep}
+                setShowModal={setShowModal}
+            />
         </>
     );
 };

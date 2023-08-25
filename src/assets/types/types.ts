@@ -16,3 +16,11 @@ export interface IEditKeep {
 export interface IDeleteKeep {
     (id: number): void;
 }
+
+export interface ISetModal {
+    (modal: boolean): void;
+}
+
+export interface ISetModalActive {
+    (task: IKeep | null): void;
+}
