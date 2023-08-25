@@ -103,7 +103,13 @@ const Modal: FC<ModalProps> = ({ showModal, setShowModal, keep, editKeep, addKee
                             ></div>
                         ))}
                     </div>
-                    <IoClose className="modal__btn-delete" onClick={saveKeep} />
+                    <IoClose
+                        className="modal__btn-delete"
+                        onClick={() => {
+                            saveKeep();
+                            setShowModal(false);
+                        }}
+                    />
                 </form>
             </div>
         </div>
