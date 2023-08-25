@@ -32,7 +32,7 @@ html {
 
 .keeps-grid {
     display: flex;
-    margin: 120px 50px 70px 70px;
+    margin: 0px 50px 70px 70px;
     width: auto;
     height: auto;
 }
@@ -160,6 +160,10 @@ html {
         color: #fff;
         outline: none;
         border: none;
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
     }
 
     &__input {

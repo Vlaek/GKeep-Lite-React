@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import Header from "./assets/components/Header";
 import KeepList from "./assets/components/KeepList";
 import Modal from "./assets/components/Modal";
+import Button from "./assets/components/UI/Button/Button";
 import { IKeep } from "./assets/types/types";
 
 const defaultKeeps = [
@@ -81,6 +82,7 @@ const App: FC = () => {
     return (
         <>
             <Header />
+            <Button onAdd={addKeep} keepId={keeps.length} />
             <KeepList
                 keeps={keeps}
                 onDelete={deleteKeep}

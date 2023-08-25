@@ -38,7 +38,16 @@ const Modal: FC<ModalProps> = ({ showModal, setShowModal, keep, editKeep, addKee
         }
     };
 
-    const colors = ["#a258e3", "#2f5465", "#6f3124", "#214d3f", "#84848c", "#2d3e51", "#4a4039"];
+    const colors = [
+        "#a258e3",
+        "#2f5465",
+        "#6f3124",
+        "#214d3f",
+        "#84848c",
+        "#2d3e51",
+        "#4a4039",
+        "#282c34",
+    ];
 
     return (
         <div

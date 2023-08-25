@@ -1,3 +1,30 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 120px auto 40px;
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+    width: 540px;
+    border-radius: 8px;
+    border: solid 1px #5f6368;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+
+    input {
+        background: transparent;
+        border: none;
+        padding: 1rem;
+        color: white;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
 .button {
     background-color: #fff;
     padding: 10px;
