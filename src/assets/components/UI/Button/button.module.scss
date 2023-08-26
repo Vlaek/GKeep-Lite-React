@@ -37,3 +37,19 @@
         border: 1px solid #000;
     }
 }
+
+@media (max-width: 600px) {
+    .wrapper {
+        margin-bottom: 20px;
+    }
+
+    .form {
+        width: 380px;
+    }
+}
+
+@media (max-width: 440px) {
+    .form {
+        width: 300px;
+    }
+}

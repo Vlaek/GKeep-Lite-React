@@ -34,3 +34,22 @@
         }
     }
 }
+
+@media (max-width: 800px) {
+    .wrapper {
+        width: 400px;
+
+        .input {
+            width: 400px;
+        }
+    }
+}
+
+@media (max-width: 660px) {
+    .wrapper {
+        width: 100%;
+        .input {
+            width: 100%;
+        }
+    }
+}
