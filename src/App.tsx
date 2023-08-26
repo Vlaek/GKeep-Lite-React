@@ -54,6 +54,7 @@ const App: FC = () => {
     const [keeps, setKeeps] = useState<IKeep[]>(defaultKeeps);
     const [showModal, setShowModal] = useState(false);
     const [fullKeep, setFullKeep] = useState<IKeep | null>(null);
+    const [filter, setFilter] = useState("");
 
     const addKeep = (keep: IKeep) => {
         setKeeps([...keeps, keep]);
@@ -79,12 +80,31 @@ const App: FC = () => {
         setShowModal(!showModal);
     };
 
+    // const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement> | string) => {
+    //     if (!e.target.value) e.target.value = "";
+    //     setFilter(e.target.value);
+    // };
+
+    const setFilterKeeps = () => {
+        if (!filter) return keeps;
+
+        const filteredKeeps = keeps.filter(
+            (keep) =>
+                keep.title.toLowerCase().includes(filter.toLowerCase()) ||
+                keep.text.toLowerCase().includes(filter.toLowerCase())
+        );
+
+        return filteredKeeps;
+    };
+
+    const filteredKeeps = setFilterKeeps();
+
     return (
         <>
-            <Header />
+            <Header setFilter={setFilter} />
             <Button onAdd={addKeep} keepId={keeps.length} />
             <KeepList
-                keeps={keeps}
+                keeps={filteredKeeps}
                 onDelete={deleteKeep}
                 setKeeps={setKeeps}
                 setModalActive={setModalActive}

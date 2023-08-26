@@ -13,12 +13,6 @@
         outline: none;
         font-size: 20px;
 
-        &:focus {
-            + .input__btn_clear {
-                display: inline-block;
-            }
-        }
-
         &__btn_search {
             position: absolute;
             left: 7px;
@@ -27,7 +21,6 @@
         }
 
         &__btn_clear {
-            display: none;
             position: absolute;
             top: 12px;
             right: 7px;
