@@ -6,10 +6,6 @@ import Button from "./assets/components/UI/Button/Button";
 import { IKeep } from "./assets/types/types";
 
 const App: FC = () => {
-    const saveToLocalStorage = (key: string, value: object) => {
-        localStorage.setItem(key, JSON.stringify(value));
-    };
-
     const getFromLocalStorage = (key: string) => {
         const value = localStorage.getItem(key);
         if (value) {
@@ -24,7 +20,7 @@ const App: FC = () => {
     const [filter, setFilter] = useState("");
 
     useEffect(() => {
-        saveToLocalStorage("keeps", keeps);
+        localStorage.setItem("keeps", JSON.stringify(keeps));
     }, [keeps]);
 
     const addKeep = (keep: IKeep) => {

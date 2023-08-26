@@ -50,7 +50,7 @@ const Button: FC<ButtonProps> = ({ onAdd, keepId }) => {
                 <form action="" className={styles.form} ref={formRef}>
                     <input
                         type="text"
-                        placeholder="Title"
+                        placeholder="Название..."
                         id="title"
                         value={newKeep.title}
                         onChange={(e) => {
@@ -63,7 +63,7 @@ const Button: FC<ButtonProps> = ({ onAdd, keepId }) => {
                     />
                     <input
                         type="text"
-                        placeholder="Take a note..."
+                        placeholder="Сделать заметку..."
                         id="content"
                         defaultValue={newKeep.text}
                         onChange={(e) => {
