@@ -1,7 +1,7 @@
 {
     "name": "keeps-react",
     "private": true,
-    "homepage": "https://vlaek.github.io/GKeep-Lite-React/",
+    "homepage": "https://vlaek.github.io/GKeep-Lite-React",
     "version": "0.0.0",
     "type": "module",
     "scripts": {
