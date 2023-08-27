@@ -24,10 +24,17 @@ const App: FC = () => {
     }, [keeps]);
 
     const addKeep = (keep: IKeep) => {
+        const maxId = keeps.reduce((max, keep) => {
+            return keep.id > max ? keep.id : max;
+        }, 0);
+
+        keep.id = maxId + 1;
+
         setKeeps([...keeps, keep]);
     };
 
     const editKeep = (newKeep: IKeep, id: number) => {
+        console.log(keeps);
         setKeeps(
             keeps.map((keep) => {
                 if (keep.id === id) {

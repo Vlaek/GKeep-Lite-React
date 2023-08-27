@@ -1,27 +1,29 @@
-# React + TypeScript + Vite
+# GKeep-Lite-React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
 
-Currently, two official plugins are available:
+[**GKeep-Lite-React**](https://vlaek.github.io/ToDo-React/) - это простое веб-приложение, разработанное на React, которое позволяет создавать заметки, редактировать, удалять, перемещать и менять их цвет. Пользователи могут легко организовать свои заметки, выбрав цвет, который соответствует их настроению или содержанию заметки. Кроме того, пользователи могут использовать функцию поиска для быстрого поиска нужной заметки. "GKeep-Lite-React" является простым и удобным приложением для тех, кто хочет быстро создавать заметки и организовывать свои мысли.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Основные возможности проекта включают:
 
-## Expanding the ESLint configuration
+-   **Создание заметок** - пользователи могут легко добавлять новые заметки, а также менять их цвет;
+-   **Просмотр заметок** - заметки отображаются в удобной сетке, такж есть модальное окно просмотра каждой задачи отдельно;
+-   **Поиск заметок** - можно воспользоваться поиском;
+-   **Редактирование и обновление заметок** - пользователи могут легко редактировать существующие заметки;
+-   **Удаление заметок** - если заметка больше не нужна, то пользователь может легко удалить ее;
+-   **Хранение задач** - все задачи хранятся в LocalStorage.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Технологии:
 
-- Configure the top-level `parserOptions` property like this:
+-   **HTML, CSS, JS**
+-   **React**
+-   **TypeScript**
+-   **SASS**
+-   **react-icons**
+-   **react-masonry-css**
+-   **react-responsive**
+-   **gh-pages**
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Демонстрация работы
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![Демонстрация работы](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTNraHl4cWwxMnkyMGVqajg1cGwzNjg2Z20yN2w0OTVtMGM0OTF3MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RxjxcMngnaqbVZcp6h/giphy.gif "Демонстрация работы")
