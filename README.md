@@ -15,13 +15,10 @@
 
 Технологии:
 
--   **HTML, CSS, JS**
--   **React**
--   **TypeScript**
--   **SASS**
--   **react-icons**
--   **react-masonry-css**
--   **react-responsive**
+-   **HTML, CSS, SASS, JavaScript, React, TypeScript
+-   **React Icons**
+-   **React Masonry**
+-   **React Responsive**
 -   **gh-pages**
 
 ## Демонстрация работы
