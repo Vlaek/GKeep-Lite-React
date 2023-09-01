@@ -15,7 +15,7 @@
 
 Технологии:
 
--   **HTML, CSS, SASS, JavaScript, React, TypeScript
+-   **HTML, CSS, SASS, JavaScript, React, TypeScript**
 -   **React Icons**
 -   **React Masonry**
 -   **React Responsive**
